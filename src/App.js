@@ -1,5 +1,4 @@
 import React from 'react'
-import Axios from 'axios'
 import axios from 'axios'
 
 class App extends React.Component {
@@ -11,7 +10,13 @@ class App extends React.Component {
   }
 
   getMovie = async () => {
-    const movies = await axios.get('https://yts.mx/api/v2/list_movies.json')
+    //const movies = await axios.get('https://yts.mx/api/v2/list_movies.json')
+    const {data : 
+      {data : 
+        {movies}
+      }} 
+      = await axios.get('https://yts.mx/api/v2/list_movies.json')
+      console.log(movies)
   }
 
   componentDidMount(){
