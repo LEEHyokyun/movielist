@@ -1,6 +1,6 @@
 import React from 'react'
-import logo from './logo.svg';
-import './App.css';
+import Axios from 'axios'
+import axios from 'axios'
 
 class App extends React.Component {
 
@@ -10,10 +10,12 @@ class App extends React.Component {
     movies : []
   }
 
+  getMovie = async () => {
+    const movies = await axios.get('https://yts.mx/api/v2/list_movies.json')
+  }
+
   componentDidMount(){
-    setTimeout(()=>{
-      this.setState({isLoading : false})
-  },3000)
+    this.getMovie()
 }
 
   render(){
