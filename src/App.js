@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import Movie from './Movie'
 
 class App extends React.Component {
 
@@ -16,7 +17,9 @@ class App extends React.Component {
         {movies}
       }} 
       = await axios.get('https://yts.mx/api/v2/list_movies.json')
-      console.log(movies)
+      this.setState({movies, isLoading : false}) 
+      //axios data is adapted to state array, "movies" (movies : movies)
+      // isLoading will be false
   }
 
   componentDidMount(){
@@ -24,9 +27,11 @@ class App extends React.Component {
 }
 
   render(){
-  const {isLoading} = this.state
+  const {isLoading, movies} = this.state
   return (
-    <div>{isLoading ? "Loading" : "Ready"}</div>
+    <div>{isLoading ? "Loading" : movies.map((movie_list) => {
+      return <Movie key={movie_list.id} year={movie_list.year} title={movie_list.title} summary={movie_list.summary} /> 
+    })}</div>
   );
 }
 }
