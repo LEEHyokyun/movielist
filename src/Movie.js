@@ -1,12 +1,15 @@
 import React from 'react'
 
-function Movie({year, title, summary}) {
+function Movie({year, title, summary, image}) {
     return (
-    <>
-    <h4>{year}</h4>
-    <h3>{title} : </h3>
-    <h2>{summary}</h2>
-    </>
+    <div className="movie">
+        <img src={image} alt={title} title={title}/>
+        <div className="movie_data">
+            <h3 className="movie_title">{title}</h3>
+            <h5 className="movie_year">{year}</h5>
+            <p className="movie_summary">{summary}</p>
+        </div>
+    </div>
 )}
 
 export default Movie
