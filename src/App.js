@@ -39,7 +39,8 @@ class App extends React.Component {
     ) : (
       <div className="movies">
       {movies.map((movie_list) => {
-      return <Movie key={movie_list.id} year={movie_list.year} title={movie_list.title} summary={movie_list.summary} image={movie_list.medium_cover_image} /> 
+        console.log(movie_list)
+      return <Movie key={movie_list.id} year={movie_list.year} title={movie_list.title} summary={movie_list.summary} image={movie_list.medium_cover_image} genres={movie_list.genres}/> 
     })}
     </div>
     )}
