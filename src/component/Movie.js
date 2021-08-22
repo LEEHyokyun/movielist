@@ -1,8 +1,15 @@
 import React from 'react'
 import './Movie.css'
+import {Link} from 'react-router-dom'
 
 function Movie({year, title, summary, image, genres}) {
     return (
+    <Link to={{
+        pathname: "/moviedetail",
+        state:{
+            year, title, summary, image, genres
+        }
+    }}>
     <div className="movie">
         <img src={image} alt={title} title={title}/>
         <div className="movie_data">
@@ -12,6 +19,7 @@ function Movie({year, title, summary, image, genres}) {
             <p className="movie_summary">{summary.slice(0,50)}</p>
         </div>
     </div>
+    </Link>
 )}
 
 export default Movie
