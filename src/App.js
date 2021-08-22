@@ -12,7 +12,7 @@ function App() {
       <Navigation />
       <Route path="/" exact={true} component={Home} />
       <Route path="/about" component={About} />
-      <Route path="/moviedetail" component={Detail}/>
+      <Route path="/movie/id::id" component={Detail}/>
     </BrowserRouter>
   )
 }

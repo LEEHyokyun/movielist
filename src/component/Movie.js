@@ -2,10 +2,10 @@ import React from 'react'
 import './Movie.css'
 import {Link} from 'react-router-dom'
 
-function Movie({year, title, summary, image, genres}) {
+function Movie({id, year, title, summary, image, genres}) {
     return (
     <Link to={{
-        pathname: "/moviedetail",
+        pathname: `/movie/id:${id}`,
         state:{
             year, title, summary, image, genres
         }
